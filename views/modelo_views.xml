@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_meu_modulo_tree" model="ir.ui.view">
+        <field name="name">meu.modulo.tree</field>
+        <field name="model">meu.modulo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="descricao"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_meu_modulo_form" model="ir.ui.view">
+        <field name="name">meu.modulo.form</field>
+        <field name="model">meu.modulo</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_some_method" type="object" string="Do Something" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="descricao"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_meu_modulo_root" name="Meu Módulo"/>
+    <menuitem id="menu_meu_modulo" name="Meu Modelo" parent="menu_meu_modulo_root"/>
+
+    <act_window id="action_meu_modulo"
+                name="Meu Modelo"
+                res_model="meu.modulo"
+                view_mode="tree,form"
+                menu_id="menu_meu_modulo"/>
+</odoo>
